@@ -1,2 +1,3 @@
 # rot13
-Chrome Extension to encrypt/decrypt rot13 text
+A Chrome extension to encrypt/decrypt rot13 text in place.  
+You can install it [here](https://chrome.google.com/webstore/detail/rot13/bahejodllcomogcpgnidcdaiidfmhomh "Rot13").  
