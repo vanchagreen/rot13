@@ -16,7 +16,7 @@ function decrypt(cipherText) {
 }
 
 chrome.contextMenus.onClicked.addListener(function(info, tab) {
-  chrome.tabs.executeScript(tab.id, {code: 'var plainText = "' + decrypt(info.selectionText) + '";'}, function() {
+  chrome.tabs.executeScript(tab.id, {code: 'var plainText = "' + btoa(decrypt(info.selectionText)) + '";'}, function() {
     chrome.tabs.executeScript(tab.id, {file: "replace_text.js"});
   })
   
