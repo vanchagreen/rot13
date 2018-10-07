@@ -2,24 +2,8 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-
-function decrypt(cipherText) {
-  return cipherText.split("").map(function(c) {
-    var lowerCharCode = c.toLowerCase().charCodeAt(0);
-
-    if (lowerCharCode < 97 || lowerCharCode > 122) return c;
-
-    var plain = String.fromCharCode((lowerCharCode - 97 + 13) % 26 + 97);
-    return c.toUpperCase() === c ? plain.toUpperCase() : plain;
-
-  }).join("");
-}
-
 chrome.contextMenus.onClicked.addListener(function(info, tab) {
-  chrome.tabs.executeScript(tab.id, {code: 'var plainText = "' + btoa(decrypt(info.selectionText)) + '";'}, function() {
-    chrome.tabs.executeScript(tab.id, {file: "replace_text.js"});
-  })
-  
+  chrome.tabs.executeScript(tab.id, {file: "replace_text.js"});
 });
 
 chrome.contextMenus.create({
