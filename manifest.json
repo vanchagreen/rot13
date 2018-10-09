@@ -3,7 +3,7 @@
 
   "name": "Rot13",
   "description": "Encrypts/Decrypts selected text.",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "icons": {"16": "icon16.png", "128": "icon128.png"},
   "background": {"persistent": false, "scripts": ["background.js"]},
 
